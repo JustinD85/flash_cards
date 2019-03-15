@@ -2,7 +2,7 @@ class Deck
   attr_reader :cards
 
   def initialize(c)
-    @cards = (c.is_a? Array)? c : []
+    @cards = (c.is_a? Array)? c : [] #can make method and call here
   end
 
   def count
