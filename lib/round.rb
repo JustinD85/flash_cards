@@ -3,8 +3,8 @@ require './lib/turn'
 class Round
   attr_reader :deck, :turns
 
-  def initialize(d)
-    @deck = d
+  def initialize(deck)
+    @deck = deck
     @turns = []
   end
 
@@ -19,27 +19,21 @@ class Round
   end
 
   def number_correct
-    @turns.reduce(0) do |acc, turn|
-      (turn.correct?) ?
-        acc += 1 : acc
-    end
+    @turns.count { |turn| turn.correct? }
   end
 
   def number_correct_by_category(category)
-    correct_answers = @turns.select do |turn|
-      turn.card.category == category
-    end
-    correct_answers.count
+    correct_answers = @turns.count { |turn| turn.card.category == category}
+    correct_answers
   end
 
   def percent_correct
     total_turns = @turns.count.to_f
-    correct_turns = @turns.select { |turn| turn.correct? }.count
+    correct_turns = @turns.count { |turn| turn.correct? }
     (correct_turns / total_turns) * 100
   end
 
   def start
-    
     system("clear")
     puts "Welcome! You're playing with #{@deck.cards.count} cards"
     puts "-" * 40
@@ -62,9 +56,9 @@ class Round
 
   def percent_correct_by_category(category)
     total_in_cat = @deck.cards_in_category(category).count.to_f
-    correct_in_cat = @turns.select do |turn|
+    correct_in_cat = @turns.count do |turn|
       turn.card.category == category && turn.correct?
-    end.count
+    end
     correct_in_cat / total_in_cat * 100
   end
 end
