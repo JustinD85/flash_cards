@@ -18,18 +18,6 @@ class DeckTest < MiniTest::Test
     assert_instance_of Deck, @deck
   end
 
-  def test_it_should_have_cards
-    assert_equal @cards, @deck.cards
-  end
-
-  def test_it_should_have_no_cards_if_not_given_array
-    card_as_num = 3
-    deck1 = Deck.new(card_as_num)
-    deck2 = Deck.new(@card_1)
-    assert_equal [], deck1.cards
-    assert_equal [], deck2.cards
-  end
-
   def test_it_should_return_card_count
     assert_equal 4 , @deck.count
   end

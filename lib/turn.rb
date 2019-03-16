@@ -1,9 +1,9 @@
 class Turn
   attr_reader :guess, :card
 
-  def initialize(g,c)
-    @guess = g
-    @card = c
+  def initialize(guess,card)
+    @guess = guess
+    @card = card
   end
 
   def correct?

@@ -1,8 +1,8 @@
 class Deck
   attr_reader :cards
 
-  def initialize(c)
-    @cards = (c.is_a? Array)? c : [] #can make method and call here
+  def initialize(cards)
+    @cards = cards
   end
 
   def count
@@ -12,4 +12,5 @@ class Deck
   def cards_in_category(category)
     @cards.select { |card| card.category == category  }
   end
+  
 end
