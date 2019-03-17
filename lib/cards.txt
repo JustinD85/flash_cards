@@ -2,3 +2,7 @@ What is 5 + 5?,10,STEM
 What is Rachel's favorite animal?,red panda,Turing Staff
 What is Mike's middle name?,nobody knows,Turing Staff
 What cardboard cutout lives at Turing?,Justin bieber,PopCulture
+What is 1 + 1?,2,STEM
+What is 20 - 17?,3,STEM
+Where is Waldo?,Behind the fire hydrant,Facts
+Who is the coolest Backend Student?,Nico,Facts
