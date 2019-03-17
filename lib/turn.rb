@@ -7,7 +7,7 @@ class Turn
   end
 
   def correct?
-    @guess == @card.answer
+    @guess.eql? @card.answer
   end
 
   def feedback

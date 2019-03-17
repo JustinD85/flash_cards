@@ -23,7 +23,7 @@ class Round
   end
 
   def number_correct_by_category(category)
-    @turns.count { |turn| turn.card.category == category}
+    @turns.count { |turn| turn.card.category.eql? category}
   end
 
   def percent_correct
@@ -53,8 +53,8 @@ class Round
   def percent_correct_by_category(category)
     total_in_cat = @deck.cards_in_category(category).count.to_f
     correct_in_cat = @turns.count do |turn|
-      turn.card.category == category && turn.correct?
+      turn.card.category.eql? category && turn.correct?
     end
-    correct_in_cat / total_in_cat * 100
+    (correct_in_cat / total_in_cat) * 100
   end
 end
