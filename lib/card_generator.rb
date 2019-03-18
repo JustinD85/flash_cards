@@ -15,7 +15,8 @@ class CardGenerator
       question = card_info.shift
       answer = card_info.shift
       category = card_info.shift.to_sym
-      Card.new(question,answer,category)
+      Card.new(question, answer, category)
     end
   end
+  
 end
